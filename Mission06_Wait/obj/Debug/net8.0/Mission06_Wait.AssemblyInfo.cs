@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Mission06_Wait")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+5625c35fb33af210369808fd9472db05c1d288dc")]
 [assembly: System.Reflection.AssemblyProductAttribute("Mission06_Wait")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Mission06_Wait")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

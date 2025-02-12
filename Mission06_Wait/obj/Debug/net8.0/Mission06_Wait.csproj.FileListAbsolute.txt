@@ -131,3 +131,4 @@
 /Users/danielwait/RiderProjects/Mission006Assignment/Mission06_Wait/obj/Debug/net8.0/Mission06_Wait.pdb
 /Users/danielwait/RiderProjects/Mission006Assignment/Mission06_Wait/obj/Debug/net8.0/Mission06_Wait.genruntimeconfig.cache
 /Users/danielwait/RiderProjects/Mission006Assignment/Mission06_Wait/obj/Debug/net8.0/ref/Mission06_Wait.dll
+/Users/danielwait/RiderProjects/Mission006Assignment/Mission06_Wait/obj/Debug/net8.0/Mission06_Wait.sourcelink.json
