@@ -17,14 +17,37 @@ namespace Mission006Assignment.Migrations
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "8.0.12");
 
-            modelBuilder.Entity("Mission006Assignment.Models.MovieSubmission", b =>
+            modelBuilder.Entity("Mission006Assignment.Models.Categories", b =>
                 {
-                    b.Property<int>("SubmissionID")
+                    b.Property<int>("CategoryId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
-                    b.Property<string>("Director")
+                    b.Property<string>("CategoryName")
                         .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("CategoryId");
+
+                    b.ToTable("Categories");
+                });
+
+            modelBuilder.Entity("Mission006Assignment.Models.MovieSubmission", b =>
+                {
+                    b.Property<int>("MovieId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int?>("CategoriesCategoryId")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int?>("CategoryId")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<bool?>("CopiedToPlex")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("Director")
                         .HasColumnType("TEXT");
 
                     b.Property<bool?>("Edited")
@@ -47,9 +70,20 @@ namespace Mission006Assignment.Migrations
                     b.Property<int>("Year")
                         .HasColumnType("INTEGER");
 
-                    b.HasKey("SubmissionID");
+                    b.HasKey("MovieId");
+
+                    b.HasIndex("CategoriesCategoryId");
 
                     b.ToTable("Movies");
+                });
+
+            modelBuilder.Entity("Mission006Assignment.Models.MovieSubmission", b =>
+                {
+                    b.HasOne("Mission006Assignment.Models.Categories", "Categories")
+                        .WithMany()
+                        .HasForeignKey("CategoriesCategoryId");
+
+                    b.Navigation("Categories");
                 });
 #pragma warning restore 612, 618
         }

@@ -10,4 +10,7 @@ public class Mission06Context : DbContext
     }
     
     public DbSet<MovieSubmission> Movies { get; set; }
+    
+    public DbSet<Categories> Categories { get; set; }
+
 }

@@ -1,0 +1,46 @@
+@model List<MovieSubmission>
+
+<table class="table table-bordered table-striped table-hover">
+    <thead class="fw-bold table-dark" >
+    <tr>
+        <td>Category</td>
+        <td>Title</td>
+        <td>Year</td>
+        <td>Director</td>
+        <td>Rating</td>
+        <td>Edited</td>
+        <td>Lent to</td>
+        <td>Copied to Plex</td>
+        <td>Notes</td>
+        <td>Edit</td>
+        <td>Delete</td>
+
+    </tr>
+    </thead>
+
+    @if (Model != null && Model.Any())
+    {
+        @foreach (var x in Model)
+        {
+            <tbody>
+            <tr style="border-bottom: 2px solid #343a40">
+                <td>@x.Categories?.CategoryName.ToString()</td>
+                <td>@x.Title</td>
+                <td>@x.Year</td>
+                <td>@(x.Director ?? "")</td>
+                <td>@(x.Rating ?? "")</td>
+                <td>@(x.Edited.ToString())</td>
+                <td>@(x.LentTo ?? "")</td>
+                <td>@x.CopiedToPlex</td>
+                <td>@(x.Notes ?? "")</td>
+                <td><a class="btn btn-info" asp-controller="Home" asp-action="Edit" asp-route-id="@x.MovieId">Edit</a></td>
+                <td><a class="btn btn-danger" asp-controller="Home" asp-action="Delete" asp-route-id="@x.MovieId">Delete</a></td>
+            </tr>
+            </tbody>
+        }
+    }
+    else
+    {
+        <tr><td colspan="8">No movies found</td></tr>
+    }
+</table>
